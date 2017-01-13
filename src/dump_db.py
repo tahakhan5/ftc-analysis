@@ -46,10 +46,10 @@ def is_cyber( contactmethod, fraudtype):
 def add_ftc_data():
 	cursor.execute(
 	'''
-		CREATE TABLE ftc_data(
+		CREATE TABLE complaints(
 			Organization TEXT, 
-        	CustomerZip NUMERIC, 
-        	FraudZip NUMERIC, 
+        	CustomerZip TEXT, 
+        	FraudZip TEXT, 
         	ReportingMethod TEXT,
         	SecReportingMethod TEXT,
         	FraudType TEXT,
@@ -75,18 +75,114 @@ def add_ftc_data():
 	  		IsCyber = is_cyber(ReportingMethod, FraudType)
 
 	  		data = (Organization, CustomerZip, FraudZip, ReportingMethod, SecReportingMethod, FraudType, FraudDate, ReportingDate, IsCyber)
+	  		cursor.execute("INSERT INTO complaints VALUES %s " % str(data))
 
-	  		cursor.execute("INSERT INTO ftc_data VALUES %s " % str(data))
 
+
+
+def add_income_data():
+	cursor.execute(
+	'''
+		CREATE TABLE incomes(
+			ZipCode TEXT PRIMARY KEY,
+			Employment INT, 
+        	MedianIncome INT)
+    ''')
+
+	connection.commit()
+
+	with open(os.path.join(DATA_PATH, 'income_data.csv')) as csvfile:
+	  	reader = csv.DictReader(csvfile)
+	  	for line in reader:
+
+	  		ZipCode = line['GEO.display-label'].split(" ")[1]
+	  		Employment  = line['HC01_VC03']
+	  		MedianIncome = line['HC01_VC85']
+
+	  		data = (ZipCode, Employment, MedianIncome)
+	  		cursor.execute("INSERT INTO incomes VALUES %s " % str(data))
 
 
 def add_population_data():
-	print("aa")
+	cursor.execute(
+	'''
+		CREATE TABLE populations(
+			ZipCode TEXT PRIMARY KEY,
+			Population INT)
+    ''')
 
-def main():
-	add_ftc_data()
 	connection.commit()
 
+	with open(os.path.join(DATA_PATH, 'population_data.csv')) as csvfile:
+	  	reader = csv.DictReader(csvfile)
+	  	for line in reader:
+
+	  		ZipCode = line['GEO.display-label'].split(" ")[1]
+	  		Population  = line['HD01_VD01']
+
+	  		data = (ZipCode, Population)
+	  		cursor.execute("INSERT INTO populations VALUES %s " % str(data))
+
+
+
+def add_age_data():
+	cursor.execute(
+	'''
+		CREATE TABLE ages(
+			ZipCode TEXT PRIMARY KEY,
+			Age INT)
+    ''')
+
+	connection.commit()
+
+	with open(os.path.join(DATA_PATH, 'age_data.csv')) as csvfile:
+	  	reader = csv.DictReader(csvfile)
+	  	for line in reader:
+
+	  		ZipCode = line['GEO.display-label'].split(" ")[1]
+	  		Age = line['HC01_EST_VC35']
+
+	  		data = (ZipCode, Age)
+	  		print(data)
+	  		cursor.execute("INSERT INTO ages VALUES %s " % str(data))
+
+
+
+def add_geo_data():
+	cursor.execute(
+	'''
+		CREATE TABLE geodata(
+			ZipCode TEXT PRIMARY KEY,
+			MsaID TEXT,
+			MsaName TEXT,
+			State TEXT)
+    ''')
+
+	connection.commit()
+
+	with open(os.path.join(DATA_PATH, 'zip_msa_data.csv')) as csvfile:
+	  	reader = csv.DictReader(csvfile)
+	  	for line in reader:
+
+	  		ZipCode = line['ZIP CODE']
+	  		MsaID = line['MSA No.']
+	  		MsaName = line['MSA Name']
+	  		State = line['STATE']
+	  		
+	  		data = (ZipCode, MsaID, MsaName, State)
+	  		print(data)
+	  		cursor.execute("INSERT INTO geodata VALUES %s " % str(data))
+
+
+
+def main():
+	add_geo_data()
+	add_ftc_data()
+	add_age_data()
+	add_population_data()
+	add_income_data()
+
+	connection.commit()
 
 if __name__ == '__main__':
 	main()

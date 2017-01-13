@@ -94,3 +94,5 @@ ENV/
 
 # OSX Files
 .DS_Store
+*.db
+*.csv
