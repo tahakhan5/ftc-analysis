@@ -44,41 +44,48 @@ def is_cyber( contactmethod, fraudtype):
 
 
 def add_ftc_data():
-	cursor.execute(
-	'''
-		CREATE TABLE complaints(
-			Organization TEXT, 
-        	CustomerZip TEXT, 
-        	FraudZip TEXT, 
-        	ReportingMethod TEXT,
-        	SecReportingMethod TEXT,
-        	FraudType TEXT,
-        	FraudDate DATE,
-        	ReportingDate DATE,
-        	IsCyber BOOLEAN)
-    ''')
+		count = 0
+		cursor.execute(
+		'''
+			CREATE TABLE complaints(
+				Organization TEXT, 
+	        	CustomerZip TEXT, 
+	        	FraudZip TEXT, 
+	        	ContactMethod TEXT,
+	        	SecContactMethod TEXT,
+	        	FraudType TEXT,
+	        	FraudDate DATE,
+	        	ReportingDate DATE,
+	        	IsCyber BOOLEAN,
+	        	Month TEXT,
+	        	Year TEXT)
+	    ''')
 
-	connection.commit()
+		connection.commit()
 
-	with open(os.path.join(DATA_PATH, 'ftc_data.csv')) as csvfile:
-	  	reader = csv.DictReader(csvfile)
-	  	for line in reader:
+		with open(os.path.join(DATA_PATH, 'ftc_data.csv')) as csvfile:
+		  	reader = csv.DictReader(csvfile)
+		  	for line in reader:
+		  		try:
 
-	  		Organization = line['OrganizationName']
-	  		CustomerZip = callibrate_zip(line['Consumer-ZipCode'])
-	  		FraudZip = callibrate_zip(line['Company-ZipCode'])
-	  		ReportingMethod = line['InitialContactMethodDesc']
-	  		SecReportingMethod = line['AgencyContactMethodDesc']
-	  		FraudType = line['ProductCodeDesc']
-	  		FraudDate = line['InitialContactDate']
-	  		ReportingDate = line['AgencyContactDate']
-	  		IsCyber = is_cyber(ReportingMethod, FraudType)
+			  		Organization = line['OrganizationName']
+			  		CustomerZip = callibrate_zip(line['Consumer-ZipCode'])
+			  		FraudZip = callibrate_zip(line['Company-ZipCode'])
+			  		ContactMethod = line['InitialContactMethodDesc']
+			  		SecContactMethod = line['AgencyContactMethodDesc']
+			  		FraudType = line['ProductCodeDesc']
+			  		FraudDate = line['InitialContactDate']
+			  		ReportingDate = line['AgencyContactDate']
+			  		IsCyber = is_cyber(ReportingMethod, FraudType)
+			  		Month = ReportingDate.split("/")[0]
+			  		Year = ReportingDate.split("/")[2]
 
-	  		data = (Organization, CustomerZip, FraudZip, ReportingMethod, SecReportingMethod, FraudType, FraudDate, ReportingDate, IsCyber)
-	  		cursor.execute("INSERT INTO complaints VALUES %s " % str(data))
-
-
-
+			  		data = (Organization, CustomerZip, FraudZip, ContactMethod, SecContactMethod, FraudType, FraudDate, ReportingDate, IsCyber, Year, Month)
+			  		cursor.execute("INSERT INTO complaints VALUES %s " % str(data))
+			  		count = count+1;
+			  	except:
+			  		continue
+		print(count)
 
 def add_income_data():
 	cursor.execute(
@@ -99,8 +106,9 @@ def add_income_data():
 	  		Employment  = line['HC01_VC03']
 	  		MedianIncome = line['HC01_VC85']
 
-	  		data = (ZipCode, Employment, MedianIncome)
-	  		cursor.execute("INSERT INTO incomes VALUES %s " % str(data))
+	  		if len(Employment) > 0 and len(MedianIncome):
+		  		data = (ZipCode, Employment, MedianIncome)
+		  		cursor.execute("INSERT INTO incomes VALUES %s " % str(data))
 
 
 def add_population_data():
@@ -120,8 +128,9 @@ def add_population_data():
 	  		ZipCode = line['GEO.display-label'].split(" ")[1]
 	  		Population  = line['HD01_VD01']
 
-	  		data = (ZipCode, Population)
-	  		cursor.execute("INSERT INTO populations VALUES %s " % str(data))
+	  		if len(Population) > 0:
+		  		data = (ZipCode, Population)
+		  		cursor.execute("INSERT INTO populations VALUES %s " % str(data))
 
 
 
@@ -142,9 +151,9 @@ def add_age_data():
 	  		ZipCode = line['GEO.display-label'].split(" ")[1]
 	  		Age = line['HC01_EST_VC35']
 
-	  		data = (ZipCode, Age)
-	  		print(data)
-	  		cursor.execute("INSERT INTO ages VALUES %s " % str(data))
+	  		if len(Age) > 0:
+		  		data = (ZipCode, Age)
+		  		cursor.execute("INSERT INTO ages VALUES %s " % str(data))
 
 
 
@@ -169,11 +178,9 @@ def add_geo_data():
 	  		MsaName = line['MSA Name']
 	  		State = line['STATE']
 	  		
-	  		data = (ZipCode, MsaID, MsaName, State)
-	  		print(data)
-	  		cursor.execute("INSERT INTO geodata VALUES %s " % str(data))
-
-
+	  		if len(MsaID) > 0 and len(MsaName) > 0 and len(State) > 0:
+		  		data = (ZipCode, MsaID, MsaName, State)
+		  		cursor.execute("INSERT INTO geodata VALUES %s " % str(data))
 
 def main():
 	add_geo_data()
