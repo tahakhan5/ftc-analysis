@@ -57,8 +57,9 @@ def add_ftc_data():
 	        	FraudDate DATE,
 	        	ReportingDate DATE,
 	        	IsCyber BOOLEAN,
-	        	Month TEXT,
-	        	Year TEXT)
+	        	Day INT,
+	        	Month INT,
+	        	Year INT)
 	    ''')
 
 		connection.commit()
@@ -76,16 +77,18 @@ def add_ftc_data():
 			  		FraudType = line['ProductCodeDesc']
 			  		FraudDate = line['InitialContactDate']
 			  		ReportingDate = line['AgencyContactDate']
-			  		IsCyber = is_cyber(ReportingMethod, FraudType)
+			  		IsCyber = is_cyber(ContactMethod, FraudType)
+			  		Day = ReportingDate.split("/")[1]
 			  		Month = ReportingDate.split("/")[0]
 			  		Year = ReportingDate.split("/")[2]
 
-			  		data = (Organization, CustomerZip, FraudZip, ContactMethod, SecContactMethod, FraudType, FraudDate, ReportingDate, IsCyber, Year, Month)
+			  		data = (Organization, CustomerZip, FraudZip, ContactMethod, SecContactMethod, FraudType, FraudDate, ReportingDate, IsCyber, Day, Month, Year)
 			  		cursor.execute("INSERT INTO complaints VALUES %s " % str(data))
 			  		count = count+1;
-			  	except:
+			  	except Exception as e:
+			  		print(e)
 			  		continue
-		print(count)
+
 
 def add_income_data():
 	cursor.execute(
@@ -157,6 +160,61 @@ def add_age_data():
 
 
 
+def add_college_data():
+	cursor.execute(
+	'''
+		CREATE TABLE education(
+			ZipCode TEXT PRIMARY KEY,
+			CollegePerc REAL)
+    ''')
+	
+	with open(os.path.join(DATA_PATH, 'college_data.csv')) as csvfile:
+		reader = csv.DictReader(csvfile)
+		for line in reader:
+			try:
+				ZipCode = line['ZIPCODE']
+				PercCollege = line['PERC'].split(" ")[0]
+
+				if len(ZipCode) > 0 and len(PercCollege):
+
+					data = (ZipCode, PercCollege)
+					cursor.execute("INSERT INTO education VALUES %s " % str(data))
+			except:
+				continue
+
+
+
+def add_race_data():
+	cursor.execute(
+	'''
+		CREATE TABLE races(
+			ZipCode TEXT PRIMARY KEY,
+			PercWhite REAL,
+			PercBlack REAL,
+			PercAsian REAL,
+			PercNative REAL,
+			PercLatin REAL)
+    ''')
+
+	connection.commit()
+	count = 0
+
+	with open(os.path.join(DATA_PATH, 'race_data.csv')) as csvfile:
+		reader = csv.DictReader(csvfile)
+		for line in reader:
+
+			ZipCode = line['GEO.display-label'].split(" ")[1]
+			PercWhite = line['HC03_VC49']
+			PercBlack = line['HC03_VC50']
+			PercAsian = line['HC03_VC56']
+			PercNative = line['HC03_VC51']
+			PercLatin = line['HC03_VC88']
+
+			if len(PercWhite) > 0 and len(PercBlack) > 0 and len(PercAsian) > 0 and len(PercLatin) > 0:
+				data = (ZipCode, PercWhite, PercBlack, PercAsian, PercNative, PercLatin)
+				cursor.execute("INSERT INTO races VALUES %s " % str(data))
+
+
 def add_geo_data():
 	cursor.execute(
 	'''
@@ -182,7 +240,10 @@ def add_geo_data():
 		  		data = (ZipCode, MsaID, MsaName, State)
 		  		cursor.execute("INSERT INTO geodata VALUES %s " % str(data))
 
+
 def main():
+	add_college_data()
+	add_race_data()
 	add_geo_data()
 	add_ftc_data()
 	add_age_data()

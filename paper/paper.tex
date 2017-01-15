@@ -408,6 +408,8 @@ Fraud and and deceptive practices have been around since the establishment of
 The FTC and the FBI 
 
 
+The categories of the fraud
+
 
 \lipsum[2-7]
 
@@ -465,7 +467,7 @@ In this section we explain the charectarisitcs of our datasets and the sources t
 
 \subsubsection{FTC Complaint Dataset}
 
-The primary dataset that we use for our evlauation is a corpus of the complaint logs filed at different collecitons agencies for the FTC during the years 2013-2014. The Dataset comprises of a total of 865K complaints aggregated for cyber as well as regular fraud instances during the time period. Table \ref{ftcdata} shows the fields of the original dataset along with their description summary. For the purposes of brevity, we only include the fields that were used in our analysis.
+The primary dataset that we use for our evlauation is a corpus of the complaint logs filed at different collecitons agencies for the FTC during the months Jan, 13 to June, 14. The Dataset comprises of a total of 865K complaints aggregated for cyber as well as regular fraud instances during the time period. Table \ref{ftcdata} shows the fields of the original dataset along with their description summary. For the purposes of brevity, we only include the fields that were used in our analysis.
 \\
 \subsubsection{US Census Datasets}
 Zip code information in our complaint dataset allows us to perform demographic analysis of the frauds. We obtain the demographic information associated with zip codes available at the US Census Bureau website \cite{usbureau}. The specific information that we collect is stated below:
@@ -485,7 +487,7 @@ Zip code information in our complaint dataset allows us to perform demographic a
 \begin{figure}
 \centering
   \includegraphics[scale=0.5]{graphics/methodology.png}
-  \caption{A boat.}
+  \caption{Classification methodology for cyber and regular frauds}
   \label{classify}
 \end{figure}
 
@@ -494,11 +496,96 @@ While information from the US Bureau was standardized and did not require prepro
 As the FTC dataset was aggregated for all fraud channels a major calibration step we perfrom is to tag each crime complaint as either cyber or regular. An associated challenge for this was our limited view of the fraud description. To perform this calibration we use the \textbf{Contact Method} and \textbf{Fraud Description} fields from Table \ref{ftcdata}. We flag a complaint as cyber if the victims primary contact method was thorugh online media, these are primarily websites, social networks, email and IM. For the remainder of the complaints we look at the description. If the complinat description invovles something associated with Internet, we classify it as a cyber fraud regardless of how the victim was initially approached. Figure \ref{classify} provides an depicticon of our classification methodology. This process  provides us with two distinct categories  and enables a fair comparison of the frauds. 
 
 
-
-
-
-
 \section{Evaluation}
+
+Our evaluation section can be devided into two main components. First we look at the different aspects and trends within the complaint dataset and elaborate on certain prominent charecterisitcs between regular and cyber frauds. The second part of our evaluation focuses on an in-depth analysis of the demographics linked with the types of frauds.
+
+\subsection{Fraud Reporting over Time}
+
+\begin{figure}
+\centering
+  \includegraphics[scale=0.4]{graphics/reg_vs_holiday.pdf}
+  \caption{Cyber and regular fraud variation during regular and holiday season}
+  \label{temporal}
+\end{figure}
+
+We initially perform a temporal analysis of the 15 month dataset to evaluate how the fraud reporting varies, over time and expore when a certain fraud is more likely to be occur and reported. While the overall rate of reporting remains consistent, we observe significant vairations specifically in the winter holiday season. To investigate this, we select two discicnt, 20 day periods in the dataset; regular days (Aug, 15  to Sept, 5) and holidays (Dec 15, to Jan, 5). Figure \ref{temporal} shows the variation of cyber and regular frauds within the two specific time periods. We observe that the overall number of fraud reports decrease by a total of 43.7\% within the holiday seasion. Another significant insight is the indiviudal number of cyber and frauds in each time period. While cyber reports are approximaltely 8.0\% less than regular reports in the regular reports, they are 47.9\% more by than regular reports during the holidays. Additionally, we also notice that, specicially over the weekends, the number of cyber reports are greater than the regular reports throughout the dataset.
+
+To further validate our findings from figure \ref{temporal}, we perfrom the t-test to verify the statistical significance of the reporting difference in the two time periods. We find that the \emph{p-value} coefficients to compare cyber and regular frauds in each region. Table \ref{ttest} summarizes our results.
+
+\smallskip
+\begin{table}[h]
+\centering
+\begin{tabular}{cc}
+\hline
+\multicolumn{1}{c}{\bfseries Fraud Type} & \multicolumn{1}{c}{\bfseries \emph{p-value}
+Coefficient}
+\\
+\hline
+\hline
+Cyber & 0.014\\
+\hline
+Regular & 0.003\\
+\hline
+\end{tabular}
+\caption{t-test results for cyber and regular frauds in different periods}\label{ttest}
+\end{table}
+\smallskip
+Our results indicate that cyber fraud reporting trends are statisitcally significant (\emph{p-value} $>$ 0.05) between the two regions. To further invesitigate phenomenon, we look at the reporting methods vitimins use to contact section \ref{reportingmethods}.
+
+\subsection{Fraud Reporting Methods}\label{reportingmethods}
+
+We evaluate the reporting methods that individuals use to report fraud incidencts to the 
+
+While the overall rate of reporting remains consistent, we observe that during the holiday seasons, the overall reporting reguces
+
+
+
+80% use cyber...
+
+66% user cyber..
+
+While we see that the decrease in regular frauds can be associated with a number of cnter and call centers being cloaed and having cyber frauds...
+
+... for cyber frauds 80\% of the users wish to reprort frauds online, this essentially indicates thar the number of cyber frauds actually reduce in during the holiday season. Our intution is corroborated with the p-value wh 
+
+
+\subsection{Top Fraudsters}\label{reportingmethods}
+
+
+
+
+
+
+
+cyber - use call center and internet
+
+regular -> primarily use call, have reduced hours, hence leads to a lower reporting rate..
+
+
+distinct 20 day periods
+Holiday 15 jan - 5 Jan
+
+
+average holiays seasion
+
+
+Regualr Seasion Aug
+
+Month with Max Reporting
+Month with minimum reoprting
+
+Even During regular days, cyber reports where > regular reports... 
+
+perform p value statisitcal tests...
+create a p value tabls
+
+are there certain durations where there are a larger number of cyber-crimes than regular crimes.  Figure \ref{temporal} shows t
+
+
+
+
+as online reporting for cyber, 
 
 
 \section{Discussion}
