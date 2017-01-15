@@ -7,7 +7,7 @@ DATA_PATH  = "./data"
 OUT_PATH = "../plots"
 
 
-csv_file = open(os.path.join(OUT_PATH, '3_reporting_methods.csv'), "w")
+csv_file = open(os.path.join(OUT_PATH, '4_top_fraudsters.csv'), "w")
 data_writer = csv.writer(csv_file,delimiter=',')
 
 connection = sqlite3.connect('project_data.db')
@@ -15,20 +15,23 @@ cursor = connection.cursor()
 
 cursor.execute(
 		'''
-			SELECT Count(*) as A, Organization FROM complaints
-			WHERE IsCyber = 1
-			GROUP BY Organization
-			ORDER BY A Desc
+			SELECT Count(*) as A, geodata.MSAName FROM geodata
+			INNER JOIN complaints ON  geodata.ZipCode == complaints.FraudZip
+			WHERE complaints.IsCyber = 1
+			GROUP BY geodata.MSAName
+			Order BY A DESC
 	    ''')
+
 
 cyber_rows = cursor.fetchall()
 
 cursor.execute(
 		'''
-			SELECT Count(*) as A, Organization FROM complaints
-			WHERE IsCyber = 0
-			GROUP BY Organization
-			ORDER BY A Desc
+			SELECT Count(*) as A, geodata.MSAName FROM geodata
+			INNER JOIN complaints ON  geodata.ZipCode == complaints.FraudZip
+			WHERE complaints.IsCyber = 0
+			GROUP BY geodata.MSAName
+			Order BY A DESC
 	    ''')
 
 reg_rows = cursor.fetchall()

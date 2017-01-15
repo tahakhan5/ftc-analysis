@@ -402,13 +402,13 @@ Exploring if certain demographics are more succeptible to cybercrime
 Suggesting improvements that might be the right way to create more awareness annd campaings.
 
 
-Fraud and and deceptive practices have been around since the establishment of 
 
+Fraud and and deceptive practices have been around since the establishment of 
 
 The FTC and the FBI 
 
+The categories of the fraud, exlplain what is cyber and regular
 
-The categories of the fraud
 
 
 \lipsum[2-7]
@@ -421,30 +421,30 @@ The categories of the fraud
 \begin{table*}[h]
 \noindent
 \centering
-\begin{tabular}{|K{0.18\linewidth}|p{0.72\linewidth}|}
+\begin{tabular}{K{0.18\linewidth}|p{0.72\linewidth}}
 \hline
-\multicolumn{1}{|c|}{\bfseries Data Field} & \multicolumn{1}{c|}{\bfseries Field Description}
+\multicolumn{1}{c}{\bfseries Data Field} & \multicolumn{1}{c}{\bfseries Field Description}
 \\ 
 \hline
-Agency Name & All the complaint collection agencies associated with the FTC. Some of the prominent  agencies were the FTC online and phone centers, publisher clearing house and the attorney general in specific states.\\
 \hline
-Zip code Information & The zip code of the victim and the fraudulent entity. This provided us with low level granularity for analysis, however, the latter was only available for a subset of the complaints\\
+Agency Name & The complaint collection agencies associated with the FTC.\\
 \hline
-Contact Method & The Primary channel method that was used by the fraudulet entity to contact the victim e.g. Internet, phone, mail.\\
+Zip code Information & The zip code of the victim and the fraudulent entity.\\
+%This provided us with low level granularity for analysis, however, the latter was only available for a subset of the complaints\\
 \hline
-Fraud Description & A description of nature the fraud, and its type e.g. credit  card, fake product, business fraud.\\
+Contact Method & The primary channel used by the fraudulet entity to contact the victim e.g. Internet, phone, mail.\\
+\hline
+Fraud Description & A description of nature the fraud, and its type e.g. credit card, fake product, debt collection.\\
 \hline
 Fraud \&
- Reporting Date & The dates when the fraud initially occurred and the date on which is was reported
+ Reporting Date & The dates when the fraud initially occurred and the date on which is was reported.
 \\
 \hline
 \end{tabular}
-\bigskip
+\vspace{8pt}
 \caption{The description of the data fields that were primarily used in the for data calibration and analysis}\label{ftcdata}
+\vspace{-20pt}
 \end{table*}
-
-
-
 
 As our work evaluates both cyber as well as regular frauds, we provide related work that encompasses both of these categories. However, we elaborate more on recent research which focuses on cyber frauds
 as more individuals are victims of these crimes \cite{ftcfraud} due to the increased Internet usage trends for sensitive activities. Before the Internet became a primary hub of economic and social activity, researchers measured \cite{ukphone} and developed techniques based on statistical models \cite{creditfraud, phoenfraudnn, phonefraudstat} to detect phone and credit card based frauds. In the past few years,  research evaluations have shifted focus towards cyber activity \cite{databreach, playingfield, fraudfinance, cybertrends} due to its high rate and the potential for harm.
@@ -486,7 +486,7 @@ Zip code information in our complaint dataset allows us to perform demographic a
 
 \begin{figure}
 \centering
-  \includegraphics[scale=0.5]{graphics/methodology.png}
+  \includegraphics[scale=0.35]{graphics/methodology.png}
   \caption{Classification methodology for cyber and regular frauds}
   \label{classify}
 \end{figure}
@@ -498,7 +498,7 @@ As the FTC dataset was aggregated for all fraud channels a major calibration ste
 
 \section{Evaluation}
 
-Our evaluation section can be devided into two main components. First we look at the different aspects and trends within the complaint dataset and elaborate on certain prominent charecterisitcs between regular and cyber frauds. The second part of our evaluation focuses on an in-depth analysis of the demographics linked with the types of frauds.
+Our evaluation section can be divided into two main components. First, we look at the different aspects and trends within the complaint dataset and elaborate on certain prominent characteristics between regular and cyber frauds. The second part of our evaluation focuses on an in-depth analysis of the demographics linked with the fraud types.
 
 \subsection{Fraud Reporting over Time}
 
@@ -509,11 +509,10 @@ Our evaluation section can be devided into two main components. First we look at
   \label{temporal}
 \end{figure}
 
-We initially perform a temporal analysis of the 15 month dataset to evaluate how the fraud reporting varies, over time and expore when a certain fraud is more likely to be occur and reported. While the overall rate of reporting remains consistent, we observe significant vairations specifically in the winter holiday season. To investigate this, we select two discicnt, 20 day periods in the dataset; working days (Aug, 15  to Sept, 5) and holidays (Dec 15, to Jan, 5). Figure \ref{temporal} shows the variation of cyber and regular frauds within the two specific time periods. We observe that the overall number of fraud reports decrease by a total of 43.7\% within the holiday seasion. Another significant insight is the indiviudal number of cyber and frauds in each time period. While cyber reports are approximaltely 8.0\% less than regular reports duriing the working days, they are 47.9\% more by than regular reports during the holidays.
+We initially perform a temporal analysis of the 15-month dataset to evaluate how the fraud reporting varies, over time and explore when a certain fraud is more likely to be reported. While the overall rate of reporting remains consistent, we observe significant variations in the winter holiday season. To investigate this, we select two distinct, 20 day periods in the dataset; we label them as working days (Aug, 15  to Sept, 5) and holidays (Dec 15, to Jan, 5). Figure \ref{temporal} shows the variation of cyber and regular frauds within the two specific time periods. We observe that the overall number of fraud reports decrease by a total of 43.7\% within the holiday season. Another significant insight is the individual number of cyber and frauds in each time period. While cyber reports are approximately 8.0\% less than regular reports during the working days, they are 47.9\% more by than regular reports during the holidays.
 
-To further validate our findings from figure \ref{temporal}, we perfrom the t-test to verify the statistical significance of the reporting difference in the two time durations. We find that the \emph{p-value} coefficients to compare cyber and regular frauds in each region. Table \ref{ttest} summarizes our results.
+To further validate our findings from figure \ref{temporal}, we perform a t-test to verify the statistical significance of the reporting difference in the two durations. We evaluate that the \emph{p-value} coefficients by comparing cyber and regular frauds across each region. Table \ref{ttest} summarizes our results.
 
-\smallskip
 \begin{table}[h]
 \centering
 \begin{tabular}{cc}
@@ -528,13 +527,17 @@ Cyber & 0.014\\
 Regular & 0.003\\
 \hline
 \end{tabular}
-\smallskip
+\vspace{8pt}
 \caption{t-test results for cyber and regular frauds in different periods}\label{ttest}
+\vspace{-10pt}
 \end{table}
 
-Our results indicate that cyber fraud reporting trends are statisitcally significant (\emph{p-value} $>$ 0.05) between the two durations. To further invesitigate phenomenon, we look at the reporting methods vitimins use to contact section \ref{reportingmethods}.
+Our results indicate that cyber fraud reporting trends are statistically significant (\emph{p-value} $>$ 0.05) between the two time periods. To further investigate phenomenon, we look at the reporting methods vitamins use to contact section \ref{reportingmethods}.
 
 \subsection{Fraud Reporting Methods}\label{reportingmethods}
+We evaluate the methods that individuals use to report fraud incidents to the FTC. We aggregate the 26 complaint collecting agencies into online and offline categories. For instance, reports made via the Internet complaint center or the FTC complaint assistant and tagged as online, while the ones made to the FTC call center, publisher clearing house, attorney generals or other regulatory institutions are categorized and offline. Figure \ref{reportingfig} provides the distribution of how individuals opt to report cyber and regular crimes. Approximaltey 82\% of cyber fraud victims used an online complaint facility, and 63\% of regular fraud victims reported via offline methods.
+
+As a major chunk of regular frauds are reported via offline methods, and while offline institutions have reduced operation during holidays, this significantly contributes to the reduction of regular fraud reporting during holidays and biases the value in Figure \ref{temporal}. However, as most cyber frauds are reported via automated online methods which are available around the clock, we believe that cyber frauds experience a true reduction in the holiday period. Our understanding is corroborated by the \emph{p-value} statistics in Table \ref{ttest}, where the cyber complaints in the working day and holiday time periods belong to different sets, whereas, the comparisons of corresponding regular complaint sets yield and insignificant value. This insight helps us suggest more meaning suggestions deal with these specific types of crimes in section \ref{discussion}
 
 \begin{figure}
 \centering
@@ -543,54 +546,56 @@ Our results indicate that cyber fraud reporting trends are statisitcally signifi
   \label{reportingfig}
 \end{figure}
 
-We evaluate the methods that individuals use to report fraud incidencts to the FTC. We aggregate the 26 complaint collecting agencies into online and offline categories. For instance, reports made via the Internet complaint center or the FTC complaint assistant and tagged as online, while the ones made to the FTC call center, publisher clearing house, attoreny generals or other regulatory institutions are categorized and offline reports. Figure \ref{reportingfig} provides the distribution of of how individuals opted to report the respective cyber and regular crimes. We see that approximaltey 82\% of cyber fraud victims used an online complint facility, and 63\% of regular fraud victims reported via offline methods.
+\subsection{Consumer Reaction Time}\label{fraudsters}
 
-As a major chunk of regular frauds are reported via offline methods, and while offline institutions have reduced operation during holidays, this significanlty contributes to the reduction of regular fraud reporting during holidays and biases the value in Figure \ref{temporal}. However, as most cyber frauds are reported via automated online methods which are available aroud the clock, we believe that cyber frauds experience a true reduction in the holiday period. Our understanding is corroborated by the \emph{p-value} statisics in Table \ref{ttest}, where the cyber complaints in the working day and holiday time periods belong to different sets whereas the comparions of regular complait sets withtin the periods yeilds insignificant. This insights helps us suggest more meaning suggestions to cater these specifc types of crimes.
+\subsection{Top Fraudsters}\label{fraudsters}
+Next, we identify the top locations of the fraudsters present in the United States. While fraudulent entities are spread throughout, most of the heavy hitters belong to the metropolitan areas. We believe this provides an efficient disguise to the fraudulent entities.  
+Table \ref{topareas} summarizes the results for the top areas which contribute to a total of 
+29.3\% cyber reports and 32.6\% regular reports.
+\begin{table}[h]
+\centering
+\begin{tabular}{ccc}
+\hline
+\bfseries Metropolitan Area (MSA) & \bfseries \% Cyber & \bfseries \% Regular\\
+\hline
+\hline
+New York, New Jersey, Long Island & 8.41 & 7.67 \\
+\hline
+Los Angeles, Long Beach, Santa Ana & 6.50 & 7.09 \\
+\hline
+Washington, Arlington, Alexandria & 4.10 & 5.78 \\
+\hline
+Miami-Fort Lauderdale, Pompano Beach & 4.16 & 5.40 \\
+\hline
+Dallas, Fort Worth, Arlington & 2.89 & 3.36\\
+\hline
+Chicago, Naperville Joliet & 3.17 & 3.27 \\
+\hline
+\end{tabular}
+\vspace{8pt}
+\caption{Top Metropoletan Areas Where Frautdsters are Based}\label{topareas}
+\vspace{-15pt}
+\end{table}
+
+We also observe certain areas that have a high cyber to regular fraud ratio and vice versa. The San Franciso, Oakland and San Jose, Santa Clara MSAs have a cyber to regular fraud ratio of 2.21 and 5.13. The popular fraud types in these regions are Internet services, unsolicited email, and online shopping. These areas serve as a good medium for cyber fraudsters as it allows them to gel into the surrounding cyber industry. Meanwhile, The Buffalo, Niagara Falls MSA has a regular to cyber fraud ratio of 8.76 with debt collection being the significant outlier. Further investigation reveals that the Buffalo county... 
+
+\subsection{Top Frauds}\label{fraudsters}
+
+Summary of the top frauds (Maybe include? Not much intutition)
+
+\subsection{Fraud Coverage}\label{fraudsters}
+
+Evaluate Distance between Fraud and Comsumer Zip.. See Fraud Coverage...
 
 
-\subsection{Top Fraudsters}\label{reportingmethods}
-
-
-
-
-
-
-
-cyber - use call center and internet
-
-regular -> primarily use call, have reduced hours, hence leads to a lower reporting rate..
-
-
-distinct 20 day periods
-Holiday 15 jan - 5 Jan
-
-
-average holiays seasion
-
-
-Regualr Seasion Aug
-
-Month with Max Reporting
-Month with minimum reoprting
-
-Even During regular days, cyber reports where > regular reports... 
-
-perform p value statisitcal tests...
-create a p value tabls
-
-are there certain durations where there are a larger number of cyber-crimes than regular crimes.  Figure \ref{temporal} shows t
-
-
-
-
-as online reporting for cyber, 
+\subsection{Demographic Analysis}\label{fraudsters}
 
 
 \section{Discussion}
 
-
 \section{Conclusion}
 The conclusion goes here.
+Use our methodololy on more massive datasets.
 
 
 
