@@ -1,4 +1,4 @@
-# The main sripts that dumps all the datasets into the tables for querying
+# get aggregated frauds by month
 import os
 import csv
 import sqlite3

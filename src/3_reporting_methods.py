@@ -1,14 +1,13 @@
-# Top agencies that were contacted
+# Get sorted list of agencies that were contacted to report fraud
 import os
 import csv
 import sqlite3
-
 
 DATA_PATH  = "./data"
 OUT_PATH = "../plots"
 
 
-csv_file = open(os.path.join(OUT_PATH, 'top_agencies.csv'), "w")
+csv_file = open(os.path.join(OUT_PATH, '3_reporting_methods.csv'), "w")
 data_writer = csv.writer(csv_file,delimiter=',')
 
 connection = sqlite3.connect('project_data.db')
