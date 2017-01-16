@@ -13,6 +13,8 @@ data_writer = csv.writer(csv_file,delimiter=',')
 connection = sqlite3.connect('project_data.db')
 cursor = connection.cursor()
 
+
+
 cursor.execute(
 		'''
 			SELECT Count(*) as A, geodata.MSAName FROM geodata
@@ -22,8 +24,9 @@ cursor.execute(
 			Order BY A DESC
 	    ''')
 
-
 cyber_rows = cursor.fetchall()
+
+
 
 cursor.execute(
 		'''
