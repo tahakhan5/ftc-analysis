@@ -25,6 +25,13 @@ Order BY A DESC
 
 # TOP FRAUD TYPES IN EACH SECTION
 SELECT Count(*) as A, complaints.FraudType FROM complaints
-WHERE complaints.IsCyber = 0
+WHERE complaints.IsCyber = 1
 GROUP BY complaints.FraudType
 Order BY A DESC
+
+SELECT Count(*) FROM complaints
+WHERE complaints.IsCyber = 0
+
+
+
+
