@@ -448,7 +448,7 @@ As the FTC dataset was aggregated for all fraud channels a major calibration ste
 
 \begin{figure}[t]
 \centering
-  \includegraphics[scale=0.30]{graphics/methodology.png}
+  \includegraphics[scale=0.28]{graphics/methodology.png}
   \caption{Classification Methodology for Regular and Cyber Fraud}
   \label{classify}
 \end{figure}
@@ -481,7 +481,7 @@ Regular & 0.003\\
 \end{table}
 
 
-We initially perform a temporal analysis of the 15-month dataset to evaluate how the fraud reporting varies, over time and explore when a certain fraud is more likely to be reported. As a limitation of our dataset\footnote{The dataset had singinifcant missing values for the date if inital contact of fraud, Figure \ref{reportingfig} (a) shows that approximately 70\% of reporitng dates were within a week of the date when the incident occoured.}, we use reporting dates as an estimate of fraud count for a specific date. While the overall rate of fraud remains consistent, we observe significant variations in the winter holiday season. To investigate this, we select two distinct, 20 day periods in the dataset; we label them as working days (Aug, 15  to Sept, 5) and holidays (Dec 15, to Jan, 5). Figure \ref{temporal} shows the variation of cyber and regular frauds within the two specific time periods. We observe a significant drop in the frauds during the the holiday time period. Individually, cyber fraud decreases by 26\% while  regular fraud decreases by a much larger value of 56\%. We belive that the larger decrease in regular frauds is an overesitmate as reuslt of a bias. We also compare cyber and regular frauds across each region by performing a the statistical t-test. \emph{p-value}. Table \ref{ttest} summarizes our results. We use the derived \emph{p-value} coefficients aloing with additional insights from \ref{reportingmethods} to support our intuition for the biased decrease in regular fraud reports.
+We initially perform a temporal analysis of the 15-month dataset to evaluate how the fraud reporting varies, over time and explore when a certain fraud is more likely to be reported. As a limitation of our dataset\footnote{The dataset had singinifcant missing values for the date if inital contact of fraud, Figure \ref{reportingfig} (a) shows that approximately 70\% of reporitng dates were within a week of the date when the incident occoured.}, we use reporting dates as an estimate of fraud count for a specific date. While the overall rate of fraud remains consistent, we observe significant variations in the winter holiday season. To investigate this, we select two distinct, 20 day periods in the dataset; we label them as \textbf{Working} (Aug, 15  to Sept, 5) and \textbf{Holiday} (Dec 15, to Jan, 5). Figure \ref{temporal} shows the variation of cyber and regular frauds within the two specific time periods. We observe a significant drop in the frauds during the the holiday time period. Individually, cyber fraud decreases by 26\% while  regular fraud decreases by a much larger value of 56\%. We belive that the larger decrease in regular frauds is an overesitmate as reuslt of a bias. We also compare cyber and regular frauds across each region by performing a the statistical t-test. \emph{p-value}. Table \ref{ttest} summarizes our results. We use the derived \emph{p-value} coefficients aloing with additional insights from \ref{reportingmethods} to support our intuition for the biased decrease in regular fraud reports.
 
 \begin{figure}[t]
 \centering
@@ -538,8 +538,8 @@ Prizes \& Sweepstakes & 7.40 & Grants \& Credit Loans & 4.14\\
 \vspace{-15pt}
 \end{table}
 
-\subsection{Top Fraudsters}\label{fraudsters}
-Next, we identify the top locations of the fraudsters within the United States and present our findings in ref{topareas}. While fraudulent entities are spread throughout, most of the heavy hitters belong to the metropolitan areas. We believe this provides an efficient disguise to the fraudulent entities.  
+\subsection{Top Fraudster Locations}\label{fraudsters}
+Next, we identify the primary locations of the fraudsters within the United States and present our findings in ref{topareas}. While fraudulent entities are spread throughout, most of the heavy hitters belong to the metropolitan areas. We believe this provides an efficient disguise to the fraudulent entities.  
 Numbers: 29.3\% cyber reports and 32.6\% regular reports.
 
 
@@ -585,11 +585,41 @@ In order to understand the operational regions of fraudulent entities, we cacula
 
 \subsection{Demographic Analysis}\label{fraudsters}
 
-\begin{figure}[t]
+
+We study how prominent demograophic trends such as  vary with respect to the fraud categories.  
+
+After normalizing the number of complaints in each zipcode against population, we aggregate the complaint rates across medain age, median income, the percentage individuals with a college degree and the unemployment rate. Figure \ref{demographics} shows the bar plots of the complaint ratio. We elaborate how frauds these demographics infucence complain the how thinflucence 
+
+
+
+\textbf{Age:} Over, the ratio of cyber to regular complaints throughout different agr groups remains consistent. 
+
+
+Figure \ref{demographics} (a) shows tha have a complaint rate of over 50, complain almost twice in comparison to younger indvidials.
+
+
+
+
+\textbf{Income:} We do not observe any significant trends. for  low income individuals while more earining individuls are likey to report more cyber frauds Though we do not associte this with targeting we believe this is because more earning individals spend have more access as using the internet more.
+
+\textbf{Education:} While regular fruads remain consistent throughout More educated are more likely to be a vitcim of cyber frauds. We see an increasing ratio ofcyber to regular fraud for an college egucation increases, with higly educated individuals are more likely to be targeret. Similarly, to income we 
+
+while regular fraud remains fairly consinstent across different education levers we see that more educated are
+
+
+\textbf{Employment:} \cite{temp} Lo
+
+
+Areas with low unempoyment are likely to complain more...
+
+
+
+
+\begin{figure}[b]
 \centering
-  \includegraphics[scale=0.28]{graphics/demographics.pdf}
+  \includegraphics[scale=0.29]{graphics/demographics.pdf}
   \caption{Cyber and regular fraud trends over age, income, education and unemployment.}
-  \label{reportingfig}
+  \label{demographics}
 \end{figure}
 
 
@@ -599,83 +629,13 @@ Discussion Goes here
 
 The conclusion goes here.
 Use our methodololy on more massive datasets.
+Blablabla said Nobody ~\cite{Nobody06}.
+\cite{pewsmall}
 
 
 
-
-\begin{thebibliography}{1}
-
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-  
-\bibitem{affiliate}
-pete snyder affiliate fraud
-
-\bibitem{fraudfinance}
-cyberfraud in a global digital network
-
-\bibitem{databreach}
-Consumer Attitudes Toward Data Breach Noti cations and Loss of Personal Information
-
-\bibitem{playingfield}
-An Uneven Playing Field: The Advantages of the Cyber Criminal vs. Law Enforcement-and Some Practical
-
-\bibitem{identitytheft}
-Identity Theft as a Teachable Moment
-
-\bibitem{cybertrends}
-Cyber Fraud Trends and Mitigation
-
-\bibitem{fraudcanada}
-Cyberfraud in Canada
-
-\bibitem{ukphone}
-Controlling Cell Phone Fraud in the US: Lessons for the UK ‘Foresight’ Prevention Initiative
-
-\bibitem{creditfraud}
-Neural data mining for credit card fraud detection
-
-\bibitem{phoenfraudnn}
-Detection of mobile phone fraud using supervised neural networks: A first prototype
-
-\bibitem{phonefraudstat}
-Statistical Fraud Detection: A Review
-
-\bibitem{ftcfraud}
-http://gotaclassaction.com/wp-content/uploads/2013/05/FTC-Fraud-Survey.pdf
-
-\bibitem{ftccomplaints}
-complaints ftc paper
-
-\bibitem{usbureau}
-usbureau website
-
-\bibitem{deptlabor}
-dept of labor website
-
-\bibitem{consurmeraffairs}
-Are Consumers Disadvantaged or Vulnerable An Examination of Consumer Complaints to the Better Business Bureau
-
-\bibitem{ftc2015}
-Link in wunderlist
-
-\bibitem{pewinternet}
-pew internet study
-
-\bibitem{fbiic3}
-fbi IC3 Web
-
-\bibitem{buffalo1}
-\url{'http://buffalonews.com/2016/11/02/head-buffalo-debt-collection-agency-pleads-guilty-fraud/}
-
-\bibitem{buffalo2}
-\url{http://buffalonews.com/2016/11/02/buffalo-debt-collector-accused-harassing-consumers/}
-
-\ bibitem{zipatlas}
-zipatlas website.
-
-\end{thebibliography}
+\bibliography{references} 
+\bibliographystyle{ieeetr}
 
 
 

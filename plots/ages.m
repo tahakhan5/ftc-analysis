@@ -54,7 +54,7 @@ set(gca,'FontSize', 20);
 xlabel({'Ages';' ';'(a)'}', 'FontSize', 23)
 
 
-ylabel({'Fraud Rate'}, 'FontSize', 23)
+ylabel({'Complaint Rate'}, 'FontSize', 23)
 
 
 

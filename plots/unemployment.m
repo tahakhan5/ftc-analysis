@@ -52,6 +52,7 @@ set(gca, 'XTick', 1:5, 'XTickLabel', labels);
 set(gca,'FontSize', 20);
 xlabel({'Unemployment Rate';' ';'(d)'}', 'FontSize', 23)
 
-ylabel({'Fraud Rate'}, 'FontSize', 23)
+ylabel({'Complaint Rate'}, 'FontSize', 23)
+
 legend('Cyber','Regular', 'Location','northeast', 'Orientation', 'horizontal')
 

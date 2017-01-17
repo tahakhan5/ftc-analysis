@@ -186,7 +186,7 @@ def add_college_data():
 
 
 
-def add_race_data():
+def `():
 	cursor.execute(
 	'''
 		CREATE TABLE races(

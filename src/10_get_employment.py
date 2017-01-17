@@ -34,7 +34,7 @@ cursor.execute(
 				WHERE complaints.IsCyber = 0
 				GROUP BY complaints.CustomerZip) CP
 			INNER JOIN employment ON employment.ZipCode == CP.CustomerZip
-	    ''')
+	    ''')Figure \ref{demographics} 
 
 
 reg_rows = cursor.fetchall()
