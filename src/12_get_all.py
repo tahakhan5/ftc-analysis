@@ -41,5 +41,5 @@ cursor.execute(
 cyber_rows = cursor.fetchall()
 
 for i in cyber_rows:
-	data_writer.writerow(i)
+	data_writer.writerow(list(i))
 
