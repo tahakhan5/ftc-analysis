@@ -345,11 +345,11 @@
 
 \section{Introduction}
 
-In the United States, a total of more that 25 million people are victims of frauds \cite{ftcfraud}. These deceptive scams are a major cause of users economic harm with the added externalities of wasted time and stress. These illicit practices have a part of the underground economy for a while. Initially individuals were tricked by scam calls, mail or in-person fraudsters, however, the rise of the Internet has provided fraudulent entities with a more streamlined exposure to the overall population. A  survey report from 2014 indicated that 47\% of the Americans were victims of an online identity theft. Another recent report released by the  Federal Trade Commission (FTC) revealed that debt collection, identity theft, and impostor scams contribute towards 56\% of the total frauds complaints in 2015 \cite{ftc2015} . With the number of Internet users on the rise, the number of cyber frauds is likely to increase over the next couple of years \cite{pewinternet}. To deal with the increasing trend, along with the FTC, the Federal Bureau of Investigation (FBI) has also established a similar complaint portal known as the IC3, for the collection of specifically Internet-based fraudulent practices \cite{fbiic3}. This emerging trend of deceptive practices necessitates their study in order to evaluate and mitigate the harm caused to victims individuals.
+In the United States, a total of more that 25 million people are victims of frauds \cite{anderson2013consumer}. These deceptive scams are a major cause of users economic harm with the added externalities of wasted time and stress. These illicit practices have a part of the underground economy for a while. Initially individuals were tricked by scam calls, mail or in-person fraudsters, however, the rise of the Internet has provided fraudulent entities with a more streamlined exposure to the overall population. A  survey report from 2014 indicated that 47\% of the Americans were victims of an online identity theft. Another recent report released by the  Federal Trade Commission (FTC) revealed that debt collection, identity theft, and impostor scams contribute towards 56\% of the total frauds complaints in 2015 \cite{ftcpress2016} . With the number of Internet users on the rise, the number of cyber frauds is likely to increase over the next couple of years \cite{perharassment}. To deal with the increasing trend, along with the FTC, the Federal Bureau of Investigation (FBI) has also established a similar complaint portal known as the IC3, for the collection of specifically Internet-based fraudulent practices \cite{fbiic3}. This emerging trend of deceptive practices necessitates their study in order to evaluate and mitigate the harm caused to victims individuals.
 
 In this paper, we evaluate the nature of consumer fraud in the United States. Our work provides a comparison between cyber and well as regular frauds. We categorize cyber frauds as all those deceptive practices that victimize users online, while regular ones comprise of frauds that target individuals over the phone, with mail, or in-person. While we understand that cyber frauds are a major focus of today's research, our comparison based approach allows us to better understand how they differ from conventional frauds. It also enables us to independently evaluate trends in regular frauds and to see wether fraudsters are adopting online mechanisms to target more individuals. This combined analysis aids us to devise strategic suggestions to develop better fraud reduction methodologies.
 
-To evaluate fraud trends, we use a primary dataset from of FTC complaints from the year 2013 and 2014. We also collect demographic information from the US Census Bureau \cite{usbureu}. In addition to data collection, we devise a calibration methodology to identify and separate in cyber frauds from the regular ones in the complaint dataset. 
+To evaluate fraud trends, we use a primary dataset from of FTC complaints from the year 2013 and 2014. We also collect demographic information from the US Census Bureau \cite{uscensus}. In addition to data collection, we devise a calibration methodology to identify and separate in cyber frauds from the regular ones in the complaint dataset. 
 
 Our work provides three main contributions. First, we evaluate the distinctive trends prevalent in cyber and regular frauds in the dataset. This encompasses their reporting numbers and methods. The nature of frauds which are more common in each specific category and the insights on the fraudsters who carry out these specific deceptive activities. Secondly, we look at ethnic, age, education and employment demographics in each specific category and evaluate if certain individuals are more likely to report crimes. Finally, based on our findings we provide suggestive measures that can be taken into account by regulatory agencies to reduce the overall fraud in the United States.
 
@@ -385,13 +385,13 @@ Fraud \&
 \vspace{-20pt}
 \end{table*}
 
-As our work evaluates both cyber as well as regular frauds, we provide related work that encompasses both of these categories. However, we elaborate more on recent research which focuses on cyber frauds as more individuals are victims of these crimes \cite{ftcfraud} due to the increased Internet usage trends for sensitive activities. Before the Internet became a primary hub of economic and social activity, researchers measured \cite{ukphone} and developed techniques based on statistical models \cite{creditfraud, phoenfraudnn, phonefraudstat} to detect phone and credit card based frauds. In the past few years,  research evaluations have shifted focus towards cyber activity \cite{databreach, playingfield, fraudfinance, cybertrends} due to its high rate and the increased potential for harm.
+As our work evaluates both cyber as well as regular frauds, we provide related work that encompasses both of these categories. However, we elaborate more on recent research which focuses on cyber frauds as more individuals are victims of these crimes \cite{anderson2013consumer} due to the increased Internet usage trends for sensitive activities. Before the Internet became a primary hub of economic and social activity, researchers measured \cite{clarke2001controlling} and developed techniques based on statistical models \cite{brause1999neural, moreau1997detection, bolton2002statistical, snyder2015no} to detect phone and credit card based frauds. In the past few years,  research evaluations have shifted focus towards cyber activity \cite{ablon2016consumer, piper2002, ionescu2011fraud, howard2007cyber} due to its high rate and the increased potential for harm.
 
-Even though, term \emph{"cyber fraud"} is usually associated with Computer Science, its recent socio-economic impact has motivated researchers in Economics, Law, and Finance to explore solutions by incorporating methodologies specific to their areas. Ionescu et. al \cite{fraudfinance} characterize the types and sources cyber frauds in global digital networks, they link the increase of financial fraud to the prevalent usage of Internet services for financial management and transactions. The authors suggest the involvement of all stakeholders and employees through awareness and training for containing and mitigating fraud. Similarly, Howard et. al \cite{cybertrends} study malicious code attacks against financial networks and suggest technical detection and mitigation techniques for financial infrastructure. \cite{playingfield} studies how the cyber criminals have several potential advantages over their opposing law enforcement agencies. They suggest some practical steps to even out the differential gap.
+Even though, term \emph{"cyber fraud"} is usually associated with Computer Science, its recent socio-economic impact has motivated researchers in Economics, Law, and Finance to explore solutions by incorporating methodologies specific to their areas. Ionescu et. al \cite{ionescu2011fraud} characterize the types and sources cyber frauds in global digital networks, they link the increase of financial fraud to the prevalent usage of Internet services for financial management and transactions. The authors suggest the involvement of all stakeholders and employees through awareness and training for containing and mitigating fraud. Similarly, Howard et. al \cite{howard2007cyber} study malicious code attacks against financial networks and suggest technical detection and mitigation techniques for financial infrastructure. \cite{piper2002} studies how the cyber criminals have several potential advantages over their opposing law enforcement agencies. They suggest some practical steps to even out the differential gap.
 
-Due to an increase in the overall concern for online fraudulent activity, there has also been state-sponsored research that measures the impact of fraud. Smyth et. al \cite{fraudcanada} measure the extent of cyber fraud in Canada in 2011. Their work indicates that a major chunk of frauds does not get recorded and suggest a need for a sentinel record fraud data, similar to the FTC complaint center in the US.
+Due to an increase in the overall concern for online fraudulent activity, there has also been state-sponsored research that measures the impact of fraud. Smyth et. al \cite{smyth2011measuring} measure the extent of cyber fraud in Canada in 2011. Their work indicates that a major chunk of frauds does not get recorded and suggest a need for a sentinel record fraud data, similar to the FTC complaint center in the US.
 
-Another significant area of research focuses on understanding the demographics of fraud victims. A recent FTC Report \cite{ftccomplaints} uses complaint data to quantify complaint rates and across different ethnic and education groups in the US. \cite{consurmeraffairs} also look at how demographics effect the likelyhood of an individual to complain about fraud. Researchers in \cite{databreach} provide a comprehensive survey report that sums the reactions of the victims of an online data breach. They categorize their results in different income, education, age, and ethnic groups. Such research aims to provide organizations with informed insight to better develop policies for consumer rights protection.
+Another significant area of research focuses on understanding the demographics of fraud victims. A recent FTC Report \cite{raval2016determines} uses complaint data to quantify complaint rates and across different ethnic and education groups in the US. \cite{garrett2010consumers} also look at how demographics effect the likelyhood of an individual to complain about fraud. Researchers in \cite{ablon2016consumer} provide a comprehensive survey report that sums the reactions of the victims of an online data breach. They categorize their results in different income, education, age, and ethnic groups. Such research aims to provide organizations with informed insight to better develop policies for consumer rights protection.
 
 In comparison to previous research which individually look at either cyber of regular fraud, w work provides a unique angle of evaluation. We evaluate charectaristics for both types of cyber and regular frauds and their demographic trends.
 
@@ -429,7 +429,7 @@ Moth with Least Compliants & Feb 2013\\
 The primary dataset that we use for our evlauation is a corpus of the complaint logs filed at different collecitons agencies for the FTC during the months Jan, 13 to June, 14. The Dataset comprises of a total of 865K complaints aggregated for cyber as well as regular fraud instances during the time period. Table \ref{ftcdata} shows the fields of the original dataset along with their description summary. For the purposes of brevity, we only include the fields that were used in our analysis.
 \\
 \subsubsection{US Census Datasets}
-Zip code information in our complaint dataset allows us to perform demographic analysis of the frauds. We obtain the demographic information associated with zip codes available at the US Census Bureau website \cite{usbureau}. The specific information that we collect is stated below:
+Zip code information in our complaint dataset allows us to perform demographic analysis of the frauds. We obtain the demographic information associated with zip codes available at the US Census Bureau website \cite{uscensus}. The specific information that we collect is stated below:
 
 \begin{itemize}
 \vspace{8pt}
@@ -439,7 +439,7 @@ Zip code information in our complaint dataset allows us to perform demographic a
   \item Race and ethinic information
   \vspace{8pt}
 \end{itemize}
-As zip codes provide a low level granularity, to aggregate adjacent zip codes we obtain the Zip codes to the Metropolitinan Statistical Area (MSA) mappings from \cite{deptlabor}. MSA are essentially groups of geographically connected zip codes that demonstrate strong social andd economic linkage. While there are more than 40,000 zip codes in the United States there are only 382 distinct MSAs \cite{usbureau}.
+As zip codes provide a low level granularity, to aggregate adjacent zip codes we obtain the Zip codes to the Metropolitinan Statistical Area (MSA) mappings from \cite{uslaborstats}. MSA are essentially groups of geographically connected zip codes that demonstrate strong social andd economic linkage. While there are more than 40,000 zip codes in the United States there are only 382 distinct MSAs \cite{uscensus}.
 
 \subsection{Calibration Methodology}
 
@@ -512,7 +512,7 @@ We evaluate how quick do the victims of a fraud report an incident. Figure \ref{
 
 
 
-Table \ref{topfrauds} provdies a summary of the top frauds in each category. The significant cyber presence of impostor scams, and sweepstackes in, which have long existed in the regular fraud domain provides evidence that fraudsters are adopting new technology to execute the same frauds. We incorporate this specicific insight in our discussion in section. Our results greatly match with the top sources of frauds in the FTC correlate with the frauds stated in an FTC news release in 2016 \cite{ftc2015}. 
+Table \ref{topfrauds} provdies a summary of the top frauds in each category. The significant cyber presence of impostor scams, and sweepstackes in, which have long existed in the regular fraud domain provides evidence that fraudsters are adopting new technology to execute the same frauds. We incorporate this specicific insight in our discussion in section. Our results greatly match with the top sources of frauds in the FTC correlate with the frauds stated in an FTC news release in 2016 \cite{ftcpress2016}. 
 
 \begin{table}[h]
 \centering
@@ -568,7 +568,7 @@ Chicago, Naperville Joliet & 3.17 & 3.27 \\
 \vspace{-15pt}
 \end{table}
 
-We also observe certain areas that have a high cyber to regular fraud ratio and vice versa. The San Franciso, Oakland and San Jose, Santa Clara MSAs have a cyber to regular fraud ratio of 2.21 and 5.13. The popular fraud types in these regions are Internet services, unsolicited email, and online shopping. These areas serve as a good medium for cyber fraudsters as it allows them to gel into the surrounding cyber industry. Meanwhile, The Buffalo, Niagara Falls MSA has a regular to cyber fraud ratio of 8.76 with debt collection being the significant outlier. Further investigation reveals that Buffalo has a network of debt collecteors which have responsible for multi-million frauds \cite{buffalo1, buffalo2}.
+We also observe certain areas that have a high cyber to regular fraud ratio and vice versa. The San Franciso, Oakland and San Jose, Santa Clara MSAs have a cyber to regular fraud ratio of 2.21 and 5.13. The popular fraud types in these regions are Internet services, unsolicited email, and online shopping. These areas serve as a good medium for cyber fraudsters as it allows them to gel into the surrounding cyber industry. Meanwhile, The Buffalo, Niagara Falls MSA has a regular to cyber fraud ratio of 8.76 with debt collection being the significant outlier. Further investigation reveals that Buffalo has a network of debt collecteors which have responsible for multi-million frauds \cite{buffalodebt1, buffalodebt2}.
 
 
 \subsection{Fraudster Coverage}\label{fraudsters}
@@ -598,24 +598,24 @@ After normalizing the number of complaints in each zipcode against population, w
 Figure \ref{demographics} (a) shows tha have a complaint rate of over 50, complain almost twice in comparison to younger indvidials.
 
 
-
-
 \textbf{Income:} We do not observe any significant trends. for  low income individuals while more earining individuls are likey to report more cyber frauds Though we do not associte this with targeting we believe this is because more earning individals spend have more access as using the internet more.
+
+
 
 \textbf{Education:} While regular fruads remain consistent throughout More educated are more likely to be a vitcim of cyber frauds. We see an increasing ratio ofcyber to regular fraud for an college egucation increases, with higly educated individuals are more likely to be targeret. Similarly, to income we 
 
 while regular fraud remains fairly consinstent across different education levers we see that more educated are
 
-
-\textbf{Employment:} \cite{temp} Lo
-
-
-Areas with low unempoyment are likely to complain more...
+\textbf{Employment:} Areas with low unempoyment are likely to complain more...
 
 
 
 
-\begin{figure}[b]
+
+
+
+
+\begin{figure}[t]
 \centering
   \includegraphics[scale=0.29]{graphics/demographics.pdf}
   \caption{Cyber and regular fraud trends over age, income, education and unemployment.}
@@ -629,13 +629,12 @@ Discussion Goes here
 
 The conclusion goes here.
 Use our methodololy on more massive datasets.
-Blablabla said Nobody ~\cite{Nobody06}.
 \cite{pewsmall}
 
 
+\bibliographystyle{IEEEtran}
 
 \bibliography{references} 
-\bibliographystyle{ieeetr}
 
 
 
