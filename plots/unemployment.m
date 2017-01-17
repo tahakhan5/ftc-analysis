@@ -50,7 +50,7 @@ axis([0.5 5.5 0 5.5])
 labels = {'0-3','3-5','5-10','10-15','15+'};
 set(gca, 'XTick', 1:5, 'XTickLabel', labels);
 set(gca,'FontSize', 20);
-xlabel({'Unemployment Rate';' ';'(d)'}', 'FontSize', 23)
+xlabel({'Unemployment Rate (%)';' ';'(d)'}', 'FontSize', 23)
 
 ylabel({'Complaint Rate'}, 'FontSize', 23)
 

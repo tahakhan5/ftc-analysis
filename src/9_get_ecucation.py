@@ -25,8 +25,8 @@ cursor.execute(
 			INNER JOIN education ON education.ZipCode == CP.CustomerZip
 	    ''')
 
-
 cyber_rows = cursor.fetchall()
+print(len(cyber_rows))
 
 cursor.execute(
 		'''
@@ -44,6 +44,8 @@ reg_rows = cursor.fetchall()
 for i in reg_rows:
 	for j in cyber_rows:
 		if list(i)[0] == list(j)[0]: #same zipcodes
-
-			new_row = [list(i)[0], list(i)[1], list(i)[2], list(i)[3], float(list(i)[1])*1000/float(list(i)[2]), list(j)[1], list(j)[2], list(j)[3], float(list(j)[1])*1000/float(list(j)[2])]
-			data_writer.writerow(new_row)
+			try:
+				new_row = [list(i)[0], list(i)[1], list(i)[2], list(i)[3], float(list(i)[1])*1000/float(list(i)[2]), list(j)[1], list(j)[2], list(j)[3], float(list(j)[1])*1000/float(list(j)[2])]
+				data_writer.writerow(new_row)
+			except:
+				aaaa=1

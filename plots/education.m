@@ -29,12 +29,12 @@ for n = 1:length(edu)
         edu_tot(3) = edu_tot(3)+1;
     end 
     
-    if (edu(n) > 50 && edu(n) <= 70)
+    if (edu(n) > 50 && edu(n) <= 90)
         cyber_bins(4) = cyber_bins(4) + cyber(n); reg_bins(4) = reg_bins(4) + reg(n);
         edu_tot(4) = edu_tot(4)+1;
     end 
     
-    if (edu(n) > 70)
+    if (edu(n) > 90)
         cyber_bins(5) = cyber_bins(5) + cyber(n); reg_bins(5) = reg_bins(5) + reg(n);
         edu_tot(5) = edu_tot(5)+1;
     end    
@@ -48,8 +48,7 @@ b(2).FaceColor = 'b';
 
 
 
-
-axis([0.5 5.5 0 2.45])
+axis([0.5 5.5 0 3.5])
 labels = {'0-10','10-20','20-50','50-70','70+'};
 set(gca, 'XTick', 1:5, 'XTickLabel', labels);
 set(gca,'FontSize', 20);
