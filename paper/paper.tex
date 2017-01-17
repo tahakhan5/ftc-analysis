@@ -311,6 +311,7 @@
 \usepackage{lipsum}
 \usepackage{blindtext}
 \usepackage{graphicx}
+\usepackage{url}
 
 
 
@@ -386,7 +387,7 @@ Fraud \&
 
 As our work evaluates both cyber as well as regular frauds, we provide related work that encompasses both of these categories. However, we elaborate more on recent research which focuses on cyber frauds as more individuals are victims of these crimes \cite{ftcfraud} due to the increased Internet usage trends for sensitive activities. Before the Internet became a primary hub of economic and social activity, researchers measured \cite{ukphone} and developed techniques based on statistical models \cite{creditfraud, phoenfraudnn, phonefraudstat} to detect phone and credit card based frauds. In the past few years,  research evaluations have shifted focus towards cyber activity \cite{databreach, playingfield, fraudfinance, cybertrends} due to its high rate and the increased potential for harm.
 
-Even though, term \emph{"cyber"} is usually associated with Computer Science, its recent socio-economic impact has motivated researchers in Economics, Law, and Finance to explore solutions by incorporating methodologies specific to their areas. Ionescu et. al \cite{fraudfinance} characterize the types and sources cyber frauds in global digital networks, they link the increase of financial fraud to the prevalent usage of Internet services for financial management and transactions. The authors suggest the involvement of all stakeholders and employees through awareness and training for containing and mitigating fraud. Similarly, Howard et. al \cite{cybertrends} study malicious code attacks against financial networks and suggest technical detection and mitigation techniques for financial infrastructure. \cite{playingfield} studies how the cyber criminals have several potential advantages over their opposing law enforcement agencies. They suggest some practical steps to even out the differential gap.
+Even though, term \emph{"cyber fraud"} is usually associated with Computer Science, its recent socio-economic impact has motivated researchers in Economics, Law, and Finance to explore solutions by incorporating methodologies specific to their areas. Ionescu et. al \cite{fraudfinance} characterize the types and sources cyber frauds in global digital networks, they link the increase of financial fraud to the prevalent usage of Internet services for financial management and transactions. The authors suggest the involvement of all stakeholders and employees through awareness and training for containing and mitigating fraud. Similarly, Howard et. al \cite{cybertrends} study malicious code attacks against financial networks and suggest technical detection and mitigation techniques for financial infrastructure. \cite{playingfield} studies how the cyber criminals have several potential advantages over their opposing law enforcement agencies. They suggest some practical steps to even out the differential gap.
 
 Due to an increase in the overall concern for online fraudulent activity, there has also been state-sponsored research that measures the impact of fraud. Smyth et. al \cite{fraudcanada} measure the extent of cyber fraud in Canada in 2011. Their work indicates that a major chunk of frauds does not get recorded and suggest a need for a sentinel record fraud data, similar to the FTC complaint center in the US.
 
@@ -410,13 +411,13 @@ In this section we explain the charectarisitcs of our datasets and the sources t
 \\
 \hline
 \hline
-\% Cyber Reports &52.1\\
+\% Cyber Complaints &52.1\\
 \hline
-\% Regular Reports & 47.9\\
+\% Regular Complaints & 47.9\\
 \hline
-Top Reporting Month & July 2013\\
+Moth with Most Compliants & July 2013\\
 \hline
-Lowest Reporting Month & Feb 2013\\
+Moth with Least Compliants & Feb 2013\\
 \hline
 \end{tabular}
 \vspace{8pt}
@@ -584,6 +585,14 @@ In order to understand the operational regions of fraudulent entities, we cacula
 
 \subsection{Demographic Analysis}\label{fraudsters}
 
+\begin{figure}[t]
+\centering
+  \includegraphics[scale=0.28]{graphics/demographics.pdf}
+  \caption{Cyber and regular fraud trends over age, income, education and unemployment.}
+  \label{reportingfig}
+\end{figure}
+
+
 \section{Discussion}\label{discussion}
 Discussion Goes here
 \section{Conclusion}\label{conclusion}
@@ -658,10 +667,10 @@ pew internet study
 fbi IC3 Web
 
 \bibitem{buffalo1}
-link buffalo news 2
+\url{'http://buffalonews.com/2016/11/02/head-buffalo-debt-collection-agency-pleads-guilty-fraud/}
 
 \bibitem{buffalo2}
-link buffalo news 1
+\url{http://buffalonews.com/2016/11/02/buffalo-debt-collector-accused-harassing-consumers/}
 
 \ bibitem{zipatlas}
 zipatlas website.

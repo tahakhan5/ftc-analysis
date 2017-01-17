@@ -13,8 +13,6 @@ WHERE complaints.IsCyber = 0 and geodata.MSAName = 'Buffalo-Niagara Falls, NY MS
 GROUP BY complaints.FraudType
 Order BY A DESC
 
-
-
 # GET ALL THE TOP FRAUD TYPES IN TE NIAGARA COUNTY
 SELECT Count(*) as A, complaints.FraudType FROM complaints
 INNER JOIN geodata ON  geodata.ZipCode == complaints.FraudZip
@@ -22,16 +20,30 @@ WHERE complaints.IsCyber = 1 and geodata.MSAName = 'San Jose-Sunnyvale-Santa Cla
 GROUP BY complaints.FraudType
 Order BY A DESC
 
-
 # TOP FRAUD TYPES IN EACH SECTION
 SELECT Count(*) as A, complaints.FraudType FROM complaints
-WHERE complaints.IsCyber = 1
+WHERE complaints.IsCyber = 0
 GROUP BY complaints.FraudType
 Order BY A DESC
 
-SELECT Count(*) FROM complaints
-WHERE complaints.IsCyber = 0
+# Holiday Dec
+SELECT Count(*) as A, Month, Year FROM complaints
+WHERE complaints.IsCyber = 1 and Day > 25 and Year = 13 and Month =12
+GROUP BY Month, Year
+Order BY A DESC
 
 
+# Holiday Jan
+SELECT Count(*) as A, Month, Year FROM complaints
+WHERE complaints.IsCyber = 1 and Day < 5 and Year = 14 and Month =1
+GROUP BY Month, Year
+Order BY A DESC
+
+
+# Reg Jan
+SELECT Count(*) as A, Month, Year FROM complaints
+WHERE complaints.IsCyber = 1 and Day > 5 and Day < 16 and Year = 14 and Month =1
+GROUP BY Month, Year
+Order BY A DESC
 
 

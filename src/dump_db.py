@@ -17,6 +17,8 @@ TRUE_CYBERCRIMES = set(['Spyware\Adware\Malware', 'Internet Information Services
 						 'Internet Web Site Design\Promotion', 'Social Networking Service'])
 
 
+
+
 connection = sqlite3.connect('project_data.db')
 cursor = connection.cursor()
 
@@ -241,7 +243,32 @@ def add_geo_data():
 		  		cursor.execute("INSERT INTO geodata VALUES %s " % str(data))
 
 
+
+def add_employment_data():
+	cursor.execute(
+	'''
+		CREATE TABLE employment(
+			ZipCode TEXT PRIMARY KEY,
+			Unemployed REAL)
+    ''')
+
+	connection.commit()
+
+	with open(os.path.join(DATA_PATH, 'employment_data.csv')) as csvfile:
+	  	reader = csv.DictReader(csvfile)
+	  	for line in reader:
+
+	  		ZipCode = line['GEO.display-label'].split(" ")[1]
+	  		Unemployed = line['HC04_EST_VC01']
+
+	  		if len(Unemployed) > 0 and Unemployed != '-':
+		  		data = (ZipCode, Unemployed)
+		  		cursor.execute("INSERT INTO employment VALUES %s " % str(data))
+
+
+
 def main():
+	add_employment_data()
 	add_college_data()
 	add_race_data()
 	add_geo_data()

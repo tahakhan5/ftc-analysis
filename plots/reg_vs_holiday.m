@@ -18,7 +18,6 @@ reg_n =sum(reg(227:247))
 % 
 % set(gca,'yticklabel',{[]}) 
 % set(gca,'FontSize', 20)
-% set(gcf, 'PaperPosition', [0 0 10 6]); %Position plot at left hand corner with width 5 and height 5.
-% set(gcf, 'PaperSize', [10 6]); %Set the paper to have width 5 and height 5.
-% %axis([0 128 0 280])
-% saveas(gcf, 'reg_vs_holiday', 'pdf') %Save figure
+set(gcf, 'PaperPosition', [0 0 10 7]); %Position plot at left hand corner with width 5 and height 5.
+set(gcf, 'PaperSize', [10 7]); %Set the paper to have width 5 and height 5.
+saveas(gcf, 'reg_vs_holiday', 'pdf') %Save figure
