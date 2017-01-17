@@ -96,3 +96,5 @@ ENV/
 .DS_Store
 *.db
 *.csv
+.texpadtmp
+*.mat
