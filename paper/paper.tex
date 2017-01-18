@@ -341,9 +341,21 @@
 % in the abstract
 \begin{abstract}
 
-While cybercrime is a relatively recent human invention, fraudulent activity has a much longer history. This paper investigates the differences in fraud reporting and targeting among United States based consumers by comparing fraudulent activity mediated by the Internet, with traditional forms of fraud. By partitioning the FTC Consumer Sentinel complaint dataset into cyber and traditional categories, we summarize the difference in fraud trends across time, distance and location metrics.We also evaluate fraud variations across different ethnic and socio-economic factors. 
-
-Our findings suggest that both categories of frauds experience an overall decrease during the holiday season. Individuals who are victimized via traditional methods are more likely to complain using traditional methods, while a majority of cyber victims submit fraud complaints online. By evaluating the top frauds in each category, we demonstrate how traditional fraudsters have evolved in their methodologies to execute scams on the Internet that were initially perpetrated through traditional means. Finally, we incorporate our results to suggest policy based insights to strategically prevent these fraudulent activities
+While cybercrime is a relatively recent human invention, fraudulent activity
+has a much longer history. Understanding the extent to which cybercrime is fundamentally different from, or similar to, traditional fraudulent activity is the first step toward being able to effectively combat it. This paper investigates the differences in fraud
+reporting and targeting among United States based consumers by comparing
+fraudulent activity mediated by the Internet with traditional forms of
+fraud. By partitioning the FTC Consumer Sentinel complaint dataset into
+cyber and traditional categories, we summarize the difference in fraud
+trends across time, distance and location metrics.We also evaluate fraud
+variations across different ethnic and socio-economic factors. Our findings
+suggest that both categories of frauds experience an overall decrease during
+the holiday season. Individuals who are victimized via traditional methods
+are more likely to complain using traditional methods, while a majority of
+cyber victims submit fraud complaints online. By evaluating the top frauds
+in each category, we demonstrate how traditional fraudsters have evolved in
+their methodologies to execute scams on the Internet that were initially
+perpetrated through traditional means.
 
 \end{abstract}
 
@@ -462,8 +474,7 @@ As the FTC dataset was aggregated for all fraud channels a major calibration ste
 
 \section{Evaluation}\label{eval}
 
-Our evaluation section can be divided into two main components. First, we look at the different aspects and trends within the complaint dataset and elaborate on certain prominent characteristics between regular and cyber frauds. The second part of our evaluation focuses on an in-depth analysis of the demographics linked with the fraud types.
-
+Our evaluation section can be divided into three main components. First, we look at the different aspects and trends within the complaint dataset and elaborate on certain prominent characteristics between regular and cyber frauds. Next we study consumer and fraudster behaviors. The third part of our evaluation focuses on an in-depth analysis of the demographics linked with the fraud types.
 
 
 \subsection{Fraud Variation over Time}
@@ -516,7 +527,7 @@ We evaluate how quickly do the victims of a fraud report an incident. Figure \re
 
 \subsection{Most Common Frauds}\label{fraudsters}
 
-Table \ref{topfrauds} provides a summary of the top frauds in each category. The significant cyber presence of impostor scams, and sweepstakes in, which have long existed in the regular fraud domain provides evidence that fraudsters are adopting new technology to execute the same frauds. We incorporate this specific insight in our discussion in section. Our results greatly match with the top sources of frauds in the FTC correlate with the frauds stated in an FTC news release in 2016 \cite{ftcpress2016}. 
+Table \ref{topfrauds} provides a summary of the top frauds in each category. The significant cyber presence of impostor scams and sweepstakes in, which have long existed in the regular fraud domain, provides evidence that fraudsters are adopting new technology to execute the same frauds. We incorporate this specific insight in our discussion in section. Our results greatly align with the top sources of frauds stated in an FTC news release in 2016 \cite{ftcpress2016}. 
 
 \begin{table}[h]
 \centering
@@ -538,14 +549,12 @@ Prizes \& Sweepstakes & 7.40 & Grants \& Credit Loans & 4.14\\
 \hline
 \end{tabular}
 \vspace{8pt}
-\caption{Top Fraud Types}\label{topfrauds}
+\caption{Top Fraud Descriptions}\label{topfrauds}
 \vspace{-15pt}
 \end{table}
 
 \subsection{Top Fraudster Locations}\label{fraudsters}
-Next, we identify the primary locations of the fraudsters within the United States and present our findings in ref{topareas}. While fraudulent entities are spread throughout, most of the heavy hitters belong to the metropolitan areas. We believe this provides an efficient disguise to the fraudulent entities.  
-Numbers: 29.3\% cyber reports and 32.6\% regular reports.
-
+Next, we identify the primary locations of the fraudsters within the United States and present our findings in \ref{topareas}. While fraudulent entities are spread throughout, most of the heavy hitters belong to the metropolitan areas. We believe this provides an efficient disguise to the fraudulent entities.  
 
 \begin{table}[h]
 \centering
@@ -568,21 +577,21 @@ Chicago, Naperville Joliet & 3.17 & 3.27 \\
 \hline
 \end{tabular}
 \vspace{8pt}
-\caption{Top Metropolitan Areas Where Fraudsters are Based}\label{topareas}
+\caption{Top Fraudsters Locations}\label{topareas}
 \vspace{-15pt}
 \end{table}
 
-We also observe certain areas that have a high cyber to regular fraud ratio and vice versa. The San Franciso, Oakland and San Jose, Santa Clara MSAs have a cyber to regular fraud ratio of 2.21 and 5.13. The popular fraud types in these regions are Internet services, unsolicited email, and online shopping. These areas serve as a good medium for cyber fraudsters as it allows them to gel into the surrounding cyber industry. Meanwhile, The Buffalo, Niagara Falls MSA has a regular to cyber fraud ratio of 8.76 with debt collection being the significant outlier. Further investigation reveals that Buffalo has a network of debt collecteors which have responsible for multi-million frauds \cite{buffalodebt1, buffalodebt2}.
+We also observe certain areas that have a high cyber to regular fraud ratio and vice versa. The San Franciso, Oakland and San Jose, Santa Clara MSAs have a cyber to regular fraud ratio of 2.21 and 5.13. The popular fraud types in these regions are Internet services, unsolicited email, and online shopping. These areas serve as a good medium for cyber fraudsters as it allows them to gel into the surrounding cyber industry. Meanwhile, The Buffalo, Niagara Falls MSA has a regular to cyber fraud ratio of 8.76 with debt collection being the significant outlier. Further investigation reveals that Buffalo has a network of debt collecteors which have been responsible for multi-million frauds \cite{buffalodebt1, buffalodebt2}.
 
 
 \subsection{Fraudster Coverage}\label{fraudstercoverage}
 
-In order to understand the operational regions of fraudulent entities, we calculate the distances between consumer and fraudster zip codes. Figure \ref{reportingfig} (b) provides a cumulative distribution of the operational radii for cyber and regular fraudsters.  This analysis provides insight on weather cyber fraudsters leverage the Internet for more visibility and access to target more distant individuals. With a median distance of 993 and 861 for cyber and regular frauds, we believe that both types of fraudsters follow similar trends. This indicates that a major the Internet based communication does not provide cyber fraudsters with significant advantage over regular ones as they are able to achieve similar operational spans by using phone and mail based communication methods.
+In order to understand the operational regions of fraudulent entities, we calculate the distances between consumer and fraudster zip codes. Figure \ref{reportingfig} (b) provides a cumulative distribution of the operational radii for cyber and regular fraudsters.  This analysis provides insight on whether cyber fraudsters leverage the Internet for more visibility and access to target more distant individuals. With a median distance of 993 and 861 for cyber and regular frauds, we believe that both types of fraudsters follow similar trends. This indicates that a major the Internet based communication does not provide cyber fraudsters with significant advantage over regular ones as they are able to achieve similar operational spans by using phone and mail based communication methods.
 
 \begin{figure}[t]
 \centering
   \includegraphics[scale=0.28]{graphics/dist_days.pdf}
-  \caption{Distribution of reporting methods in for cyber and regular frauds}
+  \caption{The cumulative distribution for (a) The difference between fraud and reporting dates. (b) The distance between consumers and fraudsters.}
   \label{reportingfig}
 \end{figure}
 
@@ -628,7 +637,7 @@ Unemployment & 0.0084 & 0.111 & [-0.002, 0.019] & -0.0028 & 0.138 & [-0.006, 0.0
   \caption{Cyber and regular fraud trends over age, income, education and unemployment.}
   \label{demographics}
 \end{figure}
-To evaluate the effect of prominent demographic features we perform a logistic regression for both cyber and regular complaint rates. Table \label{regressions} summarizes our coefficients and their significance. Among ethnicities, our results generate statistically significant results for only Hispanic communities. While the coefficients suggest that frauds decrease for heavier concentrations of  Hispanics, a survey study \cite{anderson2013consumer} showed that Hispanics and Black communities are more likely to be victims of crimes. The decreasing trend is likely a result of fraud under-reporting due to cultural reasons, distrust in institutions, and lack of awareness or education \cite{consumerlessons}.
+To evaluate the effect of prominent demographic features we perform a logistic regression for both cyber and regular complaint rates. Table \ref{regressions} summarizes our coefficients and their significance. Among ethnicities, our results generate statistically significant results for only Hispanic communities. While the coefficients suggest that frauds decrease for heavier concentrations of  Hispanics, a survey study \cite{anderson2013consumer} showed that Hispanics and Black communities are more likely to be victims of crimes. The decreasing trend is likely a result of fraud under-reporting due to cultural reasons, distrust in institutions, and lack of awareness or education \cite{consumerlessons}.
 
 Other socio-economic variables that we take into account are age, income, education an the rate of unemployment. In addition to the regression analysis, we investigate their variation by observing complaint rates across their distributions in Figure \ref{demographics}.
 
@@ -637,7 +646,7 @@ Other socio-economic variables that we take into account are age, income, educat
 
 \textbf{Education:} Both cyber and regular complaints increase along with an increase in percentage education. We associate this trend with greater increased educational awareness among individuals \cite{consumerlessons}. Another subtle trend, in the increase in cyber to regular complaint ratio from 0.82 to 1.23. We associate this diverging trend to more educated individuals being active  the Internet  more frequently, and hence being more prone to online fraud~\cite{pewcollege}. Our reasoning is in line with insights from our regression analysis which additionally normalizes for other factors.
 
-We do include income and unemployment in our analysis due to their insignificant correlation values in Table \ref{regressions}.
+We do not include income and unemployment in our analysis due to their insignificant correlation values in Table \ref{regressions}.
 
 \section{Discussion}\label{discussion}
 Based on our findings from section \ref{eval}, we elaborate some discussion points to provide context for this analysis in hopes that it will assist in the development of better policies and help reduce consumer fraud in the U.S. 
