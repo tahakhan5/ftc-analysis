@@ -420,9 +420,9 @@ In this section we explain the characteristics of our datasets and the sources t
 \hline
 \% Regular Complaints & 47.9\\
 \hline
-Moth with Most Compliants & July 2013\\
+Month with Most Complaints & July 2013\\
 \hline
-Moth with Least Compliants & Feb 2013\\
+Month with Least Complaints & Feb 2013\\
 \hline
 \end{tabular}
 \vspace{8pt}
@@ -449,7 +449,7 @@ As zip codes provide a low level granularity, to aggregate adjacent zip codes we
 
 \subsection{Calibration Methodology}
 
-As the FTC dataset was aggregated for all fraud channels a major calibration step we perform is to tag each crime complaint as either cyber or regular. An associated challenge for this was our limited view of the fraud description. To perform this calibration we use the \textbf{Contact Method} and \textbf{Fraud Description} fields from Table \ref{ftcdata}. We flag a complaint as cyber if the victims primary contact method was through online media, these are primarily websites, social networks, email and IM. For the remainder of the complaints we look at the description. If the complaint description involves something associated with Internet, we classify it as a cyber fraud regardless of how the victim was initially approached. Figure \ref{classify} provides an depiction of our classification methodology. This process  provides us with two distinct categories  and enables a fair comparison of the frauds. 
+As the FTC dataset was aggregated for all fraud channels a major calibration step we perform is to tag each crime complaint as either cyber or regular. An associated challenge for this was our limited view of the fraud description. To perform this calibration we use the \textbf{Contact Method} and \textbf{Fraud Description} fields from Table \ref{ftcdata}. We flag a complaint as cyber if the victims primary contact method was through online media, these are primarily websites, social networks, email and IM. For the remainder of the complaints we look at the description. If the complaint description involves something associated with Internet, we classify it as a cyber fraud regardless of how the victim was initially approached. Figure \ref{classify} provides a depiction of our classification methodology. This process  provides us with two distinct categories  and enables a fair comparison of the frauds. 
      
 
 \begin{figure}[t]
