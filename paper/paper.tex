@@ -342,30 +342,64 @@
 \begin{abstract}
 
 While cybercrime is a relatively recent human invention, fraudulent activity
-has a much longer history. Understanding the extent to which cybercrime is fundamentally different from, or similar to, traditional fraudulent activity is the first step toward being able to effectively combat it. This paper investigates the differences in fraud
-reporting and targeting among United States based consumers by comparing
-fraudulent activity mediated by the Internet with traditional forms of
-fraud. By partitioning the FTC Consumer Sentinel complaint dataset into
-cyber and traditional categories, we summarize the difference in fraud
-trends across time, distance and location metrics. We also evaluate fraud
-variations across different ethnic and socioeconomic factors. Our findings
-suggest that reports of both categories of frauds decrease during
-the holiday season. Individuals who are victimized via traditional methods
-are more likely to complain using traditional methods, while a majority of
-cyber victims submit fraud complaints online. By evaluating the top frauds
-in each category, we demonstrate how traditional fraudsters have evolved in
-their methodologies to execute scams on the Internet that were initially
-perpetrated through traditional means.
+has a much longer history. Understanding the extent to which cybercrime is
+fundamentally different from, or similar to, traditional fraudulent activity is
+the first step toward being able to effectively combat it. This paper
+investigates the differences in fraud targeting among United States based
+consumers by comparing reports of fraudulent activity mediated by the Internet
+with traditional forms of fraud. By partitioning the FTC Consumer Sentinel
+complaint dataset into cyber and traditional categories, we summarize the
+difference in fraud trends across time, distance and location metrics. We also
+evaluate fraud variations across different ethnic and socioeconomic factors.
+Our findings suggest that reports of both categories of frauds decrease during
+the holiday season. Individuals who are victimized via traditional methods are
+more likely to complain using traditional methods, while a majority of cyber
+victims submit fraud complaints online. By evaluating the top frauds in each
+category, we demonstrate how traditional fraudsters have evolved in their
+methodologies to execute scams on the Internet that were initially perpetrated
+through traditional means.
 
 \end{abstract}
 
 \section{Introduction}
 
-In the United States, a total of more than 25 million people are victims of frauds per year \cite{anderson2013consumer}. These deceptive scams are a major cause of economic damages to users, not to mention the added externalities of wasted time and stress. Such illicit practices have been a part of the underground economy for quite a while. Initially, individuals were tricked by scam calls, in-person fraudsters or snail mail, however, the rise of the Internet has provided fraudulent entities with a more streamlined exposure to the overall population. According to a Javelin study in 2017, identity frauds hit a record high, targeting 15.4 million victims in the United States \cite{identiytheftonline}. The findings indicated that individuals with an online presence were more susceptible to possibility of theft. Another recent study released by the  Federal Trade Commission (FTC) reported that debt collection, identity theft, and impostor scams contributed towards 56\% of the total frauds complaints in 2015 \cite{ftcpress2016} . With the number of Internet users on the rise, the number of cyber frauds is likely to increase over the next couple of years \cite{perharassment}. To deal with this rising situation, the Federal Bureau of Investigation (FBI), has also been actively involved in addressing this issue. Their complaint portal, known as the IC3 is specifically designed to record complaints on Internet-based fraudulent practices \cite{fbiic3}. This emerging trend of deceptive practices necessitates their study in order to evaluate and mitigate the harm caused to victims.
+In the United States, a total of more than 25 million people are victims of
+frauds per year \cite{anderson2013consumer}. These deceptive scams are a major
+cause of economic damages to users, as well as added stress and wasted time.
+Such illicit practices have been a part of the underground economy for quite a
+while. Initially, individuals were contacted via scam calls,  snail mail, or in
+person communication.  The rise of the Internet has provided fraudulent
+entities with a more effective method of communicating with the overall
+population. According to a Javelin study in 2017, identity frauds hit a record
+high, targeting 15.4 million victims in the United
+States~\cite{identiytheftonline}. The findings indicated that individuals with
+an online presence were more susceptible to possibility of theft. Another
+recent study released by the  Federal Trade Commission (FTC) reported that debt
+collection, identity theft, and impostor scams contributed towards 56\% of the
+total frauds complaints in 2015 \cite{ftcpress2016} . With the number of
+Internet users on the rise, the number of cyber frauds is likely to increase
+over the next couple of years \cite{perharassment}. To deal with this rising
+situation, the Federal Bureau of Investigation (FBI), has also been actively
+involved in addressing this issue. Their complaint portal, known as the IC3 is
+specifically designed to record complaints on Internet-based fraudulent
+practices \cite{fbiic3}. This emerging trend of deceptive practices
+necessitates their study in order to evaluate and mitigate the harm caused to
+victims.
 
-This paper evaluates the nature of consumer fraud in the United States. Our work provides a comparison between cyber and traditional frauds. We categorize cyber frauds as all those deceptive practices that victimize users online, while regular (or traditional) ones comprise of frauds that target individuals over the phone, with mail, or in-person. While we understand that online scams \cite{miramirkhani2016dial} are a major focus of today's research, our comparison based approach allows us to better understand how they differ from traditional fraud methods. It also enables us to independently evaluate trends in traditional frauds and to see whether fraudsters are adopting online mechanisms to target more individuals. This combined analysis enables us to provide strategic suggestions in means to develop better fraud reduction methodologies.
+This paper evaluates the nature of consumer fraud in the United States. Our
+work provides a comparison between cyber and traditional frauds. We categorize
+cyber frauds as all those deceptive practices that victimize users online,
+while regular (or traditional) frauds target individuals over the phone, via
+mail, or in-person. While we understand that online
+scams~\cite{miramirkhani2016dial} are a major focus of today's research, our
+comparison based approach allows us to better understand how they differ from
+traditional fraud methods. It also enables us to independently evaluate trends
+in traditional frauds and to determine whether fraudsters are adopting online
+mechanisms to target more individuals. This combined analysis enables us to
+provide strategic suggestions in means to develop better fraud prevention
+techniques.
 
-To evaluate fraud trends, we use the FTC's Consumer Sentinel database, a dataset of complaints from the year 2013 and 2014. We also collect demographic information from the US Census Bureau \cite{uscensus}. In addition to data collection, we devise a calibration methodology to identify and separate cyber frauds from regular ones in the complaint dataset. 
+To evaluate fraud trends, we use the FTC's Consumer Sentinel database, a dataset of complaints from the year 2013 and 2014. We also collect demographic information from the US Census Bureau~\cite{uscensus}. In addition to data collection, we devise a calibration methodology to identify and separate cyber frauds from regular ones in the complaint dataset. 
 
 Our work provides three main contributions. First, we evaluate the distinctive trends prevalent in cyber and regular frauds in the dataset. This encompasses their reporting numbers and methods, the nature of frauds which are more common in each specific category as well as the insights on the fraudsters who carry out these specific deceptive activities. Secondly, we look at ethnic, age, education, and employment demographics in each specific category and evaluate if certain individuals are more likely to report. Finally, based on our findings we suggest measures that can be taken into account by regulatory agencies to reduce overall fraud in the United States.
 
@@ -693,19 +727,38 @@ By observing the overlap between top cyber and regular frauds (Table \ref{topfra
 
 \section{Conclusion \& Future Work}\label{conclusion}
 
-The goal of this paper is to investigate the dynamics of cyber and traditional methods for committing fraud in the United States. By partitioning the FTC Consumer Sentinel complaint dataset, we are able to explore trends among cyber and regular fraud, and analyze trends along time, distance and location metrics as well as their variation across consumer demographics. While the Internet has greatly expanded the potential reach and scale of fraudsters: where once they could only use mail or telephones for various frauds, the Internet enables one to contact millions of users very quickly, whether through fraudulent websites, Craigslist posts, or spam emails. Even so, the difference between the cyber and non-cyber methodologies is not overwhelming: this effect suggests that non-cyber activities, like purchasing goods or posting money orders, may still serve as a limiting factor on the extent or targeting of these fraudulent activities. 
+The goal of this paper is to investigate the dynamics of cyber and traditional
+methods for committing fraud in the United States. By partitioning the FTC
+Consumer Sentinel complaint dataset, we are able to explore trends among cyber
+and regular fraud, and analyze trends along time, distance and location metrics
+as well as their variation across consumer demographics. The Internet has
+greatly expanded the potential reach and scale of fraudsters, enabling them
+to contact millions of users very quickly, whether through fraudulent websites,
+Craigslist posts, or spam emails. Even so, the difference between the cyber and
+non-cyber methodologies is not overwhelming: this effect suggests that
+non-cyber activities, like purchasing goods or posting money orders, may still
+serve as a limiting factor on the extent or targeting of these fraudulent
+activities.
 
-Fraud analysis is an impactful topic that has been understudied in academia. While our current work has its limitations, we plan to extend our analysis over multiple years by establishing a collaboration with the FTC and obtaining high fidelity datasets that span a longer duration. We also look forward to evaluating our current findings with data collected by other regulatory agencies such as the FBI. This will eventually also allow us to overcome certain nuances and limitations of the current evaluation and help us develop stronger insights. Another interesting future direction is to evaluate how international fraud compares to fraud within the US, and identify any prominent international fraudsters who target US victims. This can possibly be achieved by using data from the European Commission and the eCrime project.
+As a future effort in this space, we plan to extend our analysis over multiple
+years through analysis of different, higher fidelity datasets that span a
+longer duration. We also look forward to evaluating our current findings with
+data collected by other regulatory agencies such as the FBI. This will
+eventually also allow us to overcome certain nuances and limitations of the
+current evaluation and help us develop stronger insights. Another interesting
+future direction is to evaluate how international fraud compares to fraud
+within the US, and identify any prominent international fraudsters who target
+US victims. This can possibly be achieved by using data from the European
+Commission and the eCrime project.
 
 
 \section{Acknowledgments}\label{Acknowledgments}
 
-We would like to thank the reviewers for reviewing our work and providing
-helpful feedback. This material is based upon work supported by the National Science Foundation
- under Grant No. 1351058. Any opinions,
-findings, and conclusions or recommendations expressed in this material are
-those of the authors and do not necessarily reflect the views of the
-National Science Foundation.
+We would like to thank the reviewers for their helpful feedback. This material
+is based upon work supported by the National Science Foundation under Grant No.
+1351058. Any opinions, findings, and conclusions or recommendations expressed
+in this material are those of the authors and do not necessarily reflect the
+views of the National Science Foundation.
 
 
 \bibliographystyle{IEEEtran}
